@@ -1,0 +1,38 @@
+.body {
+  font-family: 'Roboto', sans-serif;;
+  background-color: #EAD8B1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  color: #001F3F;
+}
+
+.header--title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.nav {
+}
+
+.nav--list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+}
+
+.nav--element {
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+
+.nav--element:hover {
+  color: #053f79;
+  cursor: pointer;
+}
