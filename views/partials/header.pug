@@ -2,6 +2,9 @@ header(class='header')
   h1(class='header--title') Blog app
   nav(class='nav')
     ul(class='nav--list')
-      li(class='nav--element') Categories
-      li(class='nav--element') Articles
-      li(class='nav--element') About
+      li
+        a(class='nav--element', href='/categories') Categories
+      li
+        a(class='nav--element', href='/articles') Articles
+      li
+        a(class='nav--element', href='/') About
