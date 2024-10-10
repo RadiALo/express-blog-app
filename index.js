@@ -1,8 +1,25 @@
 import express from 'express';
+import sassMiddleware from 'node-sass-middleware';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'scss'),
+    dest: path.join(__dirname, 'public/stylesheets'),
+    debug: true,
+    outputStyle: 'compressed',
+    prefix: '/stylesheets',
+    force: true
+  })
+);
+
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.set('view engine', 'pug');
 app.set('views', './views');
 
