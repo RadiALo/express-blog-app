@@ -5,3 +5,6 @@ block content
     img(src='/images/logo.svg', alt='Logo is here', class='about--logo')
     h1(class='about--title') My blog app!
     p(class='about--text') Created using Express.js
+    ul(class='articles-list')
+      each article in articles
+        include partials/article-block
