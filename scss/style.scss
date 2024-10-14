@@ -169,3 +169,11 @@ $background-color: #E2F1E7;
     padding: 20px;
   }
 }
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

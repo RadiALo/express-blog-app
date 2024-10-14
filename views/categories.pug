@@ -1,4 +1,7 @@
 extends partials/layout
 
 block content
-  p There will be Categories!
+  ul(class='categories-list')
+    each category in categories
+      li(class='categories-list--element')
+        a(class='categories-list--link', href= categoriesLinks[category])= category
