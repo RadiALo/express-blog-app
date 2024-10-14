@@ -27,7 +27,7 @@ fs.readFile(path.join(__dirname, 'data', 'articles.json'), 'utf-8', (err, data) 
       }
     });
   });
-})
+});
 
 console.log(articles)
 
@@ -56,7 +56,22 @@ app.set('views', './views');
 
 app.get('/', (req, res) => { res.render('index', { title: 'Blog app', articles: articles.slice(0, 4), categories: categories.slice(0, 5) }) })
 app.get('/categories', (req, res) => { res.render('categories', { title: 'Blog app', articles, categories }) })
-app.get('/articles', (req, res) => { res.render('articles', { title: 'Blog app', articles }) })
+app.get('/articles', (req, res) => {
+
+  if (req.query.category) {    
+    const articlesToShow = []
+
+    articles.forEach((article) => {
+      if (article.categories.includes(req.query.category)) {
+        articlesToShow.push(article);
+      }
+    });
+    res.render('articles', { title: 'Blog app', articles: articlesToShow });
+  } else {
+    res.render('articles', { title: 'Blog app', articles });
+  }
+
+})
 app.get('/articles/:id', (req, res) => { res.render('article', { title: 'Blog app', article: articles[req.params.id] }) })
 
 app.listen(3000, () => console.log('Server is running on port 3000!'));
