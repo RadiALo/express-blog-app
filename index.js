@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.get('/', (req, res) => { res.render('index', { title: 'Blog app', articles }) })
+app.get('/', (req, res) => { res.render('index', { title: 'Blog app', articles: articles.slice(0, 4) }) })
 app.get('/categories', (req, res) => { res.render('categories', { title: 'Blog app', articles }) })
 app.get('/articles', (req, res) => { res.render('articles', { title: 'Blog app', articles }) })
 app.get('/articles/:id', (req, res) => { res.render('article', { title: 'Blog app', article: articles[req.params.id] }) })
