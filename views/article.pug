@@ -2,5 +2,9 @@ extends partials/layout
 
 block content
   img(src=article.icon, alt='Logo is here', class='article--icon')
-  h1(class='article--title')= article.title
-  p(class='article--text')= article.content
+  div(class='article--container')
+    h1(class='article--title')= article.title
+    p(class='article--text')= article.content
+    div(class='article--footer')
+      div(class='article--date')= article.date 
+      div(class='article--authoe')= article.author
