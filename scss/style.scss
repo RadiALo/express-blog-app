@@ -132,6 +132,18 @@ $background-color: #E2F1E7;
     margin-bottom: 10px;
   }
 
+  &--categories {
+    display: flex;
+    max-height: 14px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 5px;
+  }
+
+  &--category {
+    font-size: 12px;
+  }
+
   &--footer {
     display: flex;
     justify-content: space-between;

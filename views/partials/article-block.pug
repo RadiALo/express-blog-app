@@ -3,6 +3,9 @@ li(class='article-block')
     a(href=article.link)
       img(class='article-block--icon', src=article.icon, alt='Article icon')
     h2(class='article-block--title')= article.title
+    div(class='article-block--categories')
+      each category in article.categories 
+        div(class='article-block--category')= category
     p(class='article-block--preview')= article.description
   div(class='article-block--footer')
     p(class='article-block--date')= article.date
