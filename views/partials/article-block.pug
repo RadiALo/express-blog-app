@@ -1,6 +1,7 @@
 li(class='article-block')
   div(class='article-block--container')
-    img(class='article-block--icon', src=article.icon, alt='Article icon')
+    a(href=article.link)
+      img(class='article-block--icon', src=article.icon, alt='Article icon')
     h2(class='article-block--title')= article.title
     p(class='article-block--preview')= article.description
   div(class='article-block--footer')
